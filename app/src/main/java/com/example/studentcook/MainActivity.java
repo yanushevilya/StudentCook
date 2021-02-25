@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mImgNames.clear();
+                mImgUrl.clear();
                 URL generatedURL = generateURL(etSearch.getText().toString());
 
                 // Запуск задачи вынесенной в отдельный поток
