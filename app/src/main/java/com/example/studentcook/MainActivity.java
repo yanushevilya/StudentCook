@@ -11,8 +11,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     // SOURCE FOR GET DATA FROM RECYCLERVIEW
-    private ArrayList<String> mImgUrl = new ArrayList<>();
-    private ArrayList<String> mImgNames = new ArrayList<>();
+    private ArrayList<String> mImgUrl = new ArrayList<>(); // #SOURCE
+    private ArrayList<String> mImgNames = new ArrayList<>(); // #SOURCE
     // -------------------------------------
 
     @Override
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         initSource();
     }
 
-    // SOURCE
+    // #SOURCE
     private void initSource() {
         mImgNames.add("Baked Omelet With Broccoli &amp; Tomato");
         mImgUrl.add("http://img.recipepuppy.com/123889.jpg");
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(this, mImgUrl, mImgNames);
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(this, mImgUrl, mImgNames); // #SOURCE
         recyclerView.setAdapter(recyclerViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

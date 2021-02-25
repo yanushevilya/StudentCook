@@ -20,13 +20,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private static final String TAG = "RecyclerViewAdapter";
 
     // SOURCE FOR GET DATA FROM RECYCLERVIEW
-    private ArrayList<String> mImg = new ArrayList<>();
-    private ArrayList<String> mImgName = new ArrayList<>();
+    private ArrayList<String> mImg = new ArrayList<>(); // #SOURCE
+    private ArrayList<String> mImgName = new ArrayList<>(); // #SOURCE
     // -------------------------------------
 
     private Context mContext;
 
-    public RecyclerViewAdapter(Context mContext, ArrayList<String> img, ArrayList<String> imgName) {
+    public RecyclerViewAdapter(Context mContext, ArrayList<String> img, ArrayList<String> imgName) { // #SOURCE
         this.mImg = img;
         this.mImgName = imgName;
         this.mContext = mContext;
@@ -47,16 +47,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         // помещаем картинку во ViewHolder с помощью библиотеки Gride
         Glide.with(mContext)
                 .asBitmap()
-                .load(mImg.get(position))
+                .load(mImg.get(position)) // #SOURCE
                 .into(holder.ivItem);
 
         // помещаем текст во ViewHolder
-        holder.tvItem.setText(mImgName.get(position));
+        holder.tvItem.setText(mImgName.get(position)); // #SOURCE
     }
 
     @Override
     public int getItemCount() {
-        return mImgName.size();
+        return mImgName.size(); // #SOURCE
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
