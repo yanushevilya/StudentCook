@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CheckboxRecipes">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:text="Выберете продукты, которые у вас есть"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnInCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:insetTop="6dp"
+        android:text="Найти" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="604dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/cbOnions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="onions"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/cbGarlic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="garlic"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Мёд"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox2"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:text="Кетчуп"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Сметана"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Молоко"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Яблоки"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Груши"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Кусочки мяса"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Специи для мяса"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Орехи"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Картошка"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Макароны"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Гречка"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox17"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Рис"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/checkBox30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Яйца"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox29"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Огурцы"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Помидоры"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox28"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Олия"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox27"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Сахар"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox26"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Масло"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox25"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Чай"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox24"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Капуста"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox23"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Лук"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox22"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Чеснок"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox3"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:text="Кофе"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Сыр"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Колбаса"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Пельмени"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox21"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Пшено"
+                    android:textColor="#004"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
