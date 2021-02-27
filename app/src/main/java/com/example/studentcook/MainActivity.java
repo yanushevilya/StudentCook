@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import static com.example.studentcook.NetworkUtils.generateURL;
+import static com.example.studentcook.NetworkUtils.generateURLCb;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,8 +31,11 @@ public class MainActivity extends AppCompatActivity {
     }
 // -------------------------------------
 
+
+
     private TextView etSearch;
     private Button btnSearch;
+    private Button btnToCheckBox;
     String name = null;
     String imglink = null;
 
@@ -41,6 +46,20 @@ public class MainActivity extends AppCompatActivity {
 
         etSearch = findViewById(R.id.etSearch);
         btnSearch = findViewById(R.id.btnSearch);
+        btnToCheckBox = findViewById(R.id.btnToCheckBox);
+
+        // Запуск Интента из окна поиска по ингридиентам
+        Intent intent = getIntent();
+        System.out.println("Intent - " + intent.toString());
+        System.out.println("Array - " + intent.getStringArrayExtra(CheckboxRecipes.EXTRA_MESSAGE));
+        String[] message = intent.getStringArrayExtra(CheckboxRecipes.EXTRA_MESSAGE);
+        System.out.println("Message - " + message);
+        if (message != null ) {
+            URL generatedCbURL = generateURLCb(message);
+            // Запуск задачи вынесенной в отдельный поток
+            new RecipeQueryTasks(MainActivity.this, null).execute(generatedCbURL);
+        }
+
 
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,9 +73,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        initSource();
+        btnToCheckBox.setOnClickListener(v -> {
+            mImgNames.clear();
+            mImgUrl.clear();
+            startCheckBoxActivity();
+        });
     }
 
+    private void startCheckBoxActivity() {
+        Intent intent = new Intent(this, CheckboxRecipes.class);
+        startActivity(intent);
+        finish();
+    }
+
+//        initSource();
 
 //    // #SOURCE
 //    private void initSource() {

@@ -32,6 +32,7 @@ class RecipeQueryTasks extends AsyncTask<URL, Void, String> {
         String response="";
         try {
             response = getResponseFromUrl(urls[0]);
+            System.out.println(response.toString());
         } catch (IOException e) {
             e.printStackTrace();
         }

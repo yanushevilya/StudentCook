@@ -7,15 +7,13 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
 
-import java.net.URL;
-
-import static com.example.studentcook.NetworkUtils.generateURLCb;
-
 public class CheckboxRecipes extends AppCompatActivity {
+    public final static String EXTRA_MESSAGE = "com.example.studentcook.MESSAGE";
 
     Button btnInCheckBox;
     CheckBox cbOnions;
     CheckBox cbGarlic;
+    String [] components;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,26 +23,19 @@ public class CheckboxRecipes extends AppCompatActivity {
         btnInCheckBox = findViewById(R.id.btnInCheckBox);
         cbOnions = findViewById(R.id.cbOnions);
         cbGarlic = findViewById(R.id.cbGarlic);
-        String [] components = {cbOnions.getText().toString(), cbGarlic.getText().toString()};
-
 
         btnInCheckBox.setOnClickListener(v -> {
-//            mainActivity.getmImgNames().clear();
-//            mainActivity.getmImgUrl().clear();
-
-            URL generatedURL = generateURLCb(components);
-
-            // Запуск задачи вынесенной в отдельный поток
-            new RecipeQueryTasks(null, CheckboxRecipes.this).execute(generatedURL);
-
             startMainActivity();
         });
     }
 
     private void startMainActivity() {
+        components = new String[]{cbOnions.getText().toString(), cbGarlic.getText().toString()};
         Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra(EXTRA_MESSAGE, components);
+        System.out.println(intent.getStringArrayExtra(EXTRA_MESSAGE));
         startActivity(intent);
-        finish();
+//        finish();
     }
 
 }
