@@ -1,34 +1,33 @@
 package com.example.studentcook;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 
 import static com.example.studentcook.NetworkUtils.generateURL;
-import static com.example.studentcook.NetworkUtils.getResponseFromUrl;
 
 public class MainActivity extends AppCompatActivity {
 
     // SOURCE FOR GET DATA FROM RECYCLERVIEW
     private ArrayList<String> mImgUrl = new ArrayList<>(); // #SOURCE
     private ArrayList<String> mImgNames = new ArrayList<>(); // #SOURCE
-    // -------------------------------------
+
+    public void setmImgUrl(String s) {
+        this.mImgUrl.add(s);
+    }
+
+    public void setmImgNames(String s) {
+        this.mImgNames.add(s);
+    }
+// -------------------------------------
 
     private TextView etSearch;
     private Button btnSearch;
@@ -51,48 +50,11 @@ public class MainActivity extends AppCompatActivity {
                 URL generatedURL = generateURL(etSearch.getText().toString());
 
                 // Запуск задачи вынесенной в отдельный поток
-                new RecipeQueryTasks().execute(generatedURL);
+                new RecipeQueryTasks(MainActivity.this).execute(generatedURL);
             }
         });
 
 //        initSource();
-    }
-
-    // КЛАСС ДЛЯ ВЫПОЛНЕНИЯ ЗАДАЧИ В ОТДЕЛЬНОМ ПОТОКЕ
-    // выполняем запрос в Интернет и получаем ответ в виде JSON
-    class RecipeQueryTasks extends AsyncTask<URL, Void, String> {
-
-        @Override
-        protected String doInBackground(URL... urls) {
-            String response="";
-            try {
-                response = getResponseFromUrl(urls[0]);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return response;
-        }
-
-        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-        @Override
-        protected void onPostExecute(String response) {
-            try {
-                JSONObject jsonResponse = new JSONObject(response);
-                JSONArray jsonArray = jsonResponse.getJSONArray("results");
-                for (int i=0; i<jsonArray.length(); i++) {
-                    JSONObject recipes = jsonArray.getJSONObject(i);
-                    name = recipes.getString("title");
-//                    ingredients = recipes.getString("ingredients");
-                    imglink = recipes.getString("thumbnail");
-                    mImgNames.add(name);
-                    mImgUrl.add(imglink);
-                }
-                initRecyclerView();
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
 
