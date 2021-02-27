@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 URL generatedURL = generateURL(etSearch.getText().toString());
 
                 // Запуск задачи вынесенной в отдельный поток
-                new RecipeQueryTasks(MainActivity.this).execute(generatedURL);
+                new RecipeQueryTasks(MainActivity.this, null).execute(generatedURL);
             }
         });
 
@@ -58,31 +58,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // #SOURCE
-    private void initSource() {
-        mImgNames.add("Baked Omelet With Broccoli &amp; Tomato");
-        mImgUrl.add("http://img.recipepuppy.com/123889.jpg");
-        mImgNames.add("Mild Curry Omelet");
-        mImgUrl.add("");
-        mImgNames.add("Light Italian Feta Omelet");
-        mImgUrl.add("http://img.recipepuppy.com/36027.jpg");
-        mImgNames.add("Awesome Cajun Omelet");
-        mImgUrl.add("");
-        mImgNames.add("Blue Cheese Omelet");
-        mImgUrl.add("http://img.recipepuppy.com/177663.jpg");
-        mImgNames.add("Canadian Bacon Omelet");
-        mImgUrl.add("");
-        mImgNames.add("Cauliflower and Feta Omelet");
-        mImgUrl.add("");
-        mImgNames.add("Chef Joey's Low Cal Breakfast Omelet");
-        mImgUrl.add("");
-        mImgNames.add("Vegan Omelet For One Recipe");
-        mImgUrl.add("http://img.re cipepuppy.com/328574.jpg");
-        mImgNames.add("Tomato Omelet Recipe");
-        mImgUrl.add("");
-
-        initRecyclerView();
-    }
+//    // #SOURCE
+//    private void initSource() {
+//        mImgNames.add("Baked Omelet With Broccoli &amp; Tomato");
+//        mImgUrl.add("http://img.recipepuppy.com/123889.jpg");
+//        mImgNames.add("Mild Curry Omelet");
+//        mImgUrl.add("");
+//        mImgNames.add("Light Italian Feta Omelet");
+//        mImgUrl.add("http://img.recipepuppy.com/36027.jpg");
+//        mImgNames.add("Awesome Cajun Omelet");
+//        mImgUrl.add("");
+//        mImgNames.add("Blue Cheese Omelet");
+//        mImgUrl.add("http://img.recipepuppy.com/177663.jpg");
+//        mImgNames.add("Canadian Bacon Omelet");
+//        mImgUrl.add("");
+//        mImgNames.add("Cauliflower and Feta Omelet");
+//        mImgUrl.add("");
+//        mImgNames.add("Chef Joey's Low Cal Breakfast Omelet");
+//        mImgUrl.add("");
+//        mImgNames.add("Vegan Omelet For One Recipe");
+//        mImgUrl.add("http://img.re cipepuppy.com/328574.jpg");
+//        mImgNames.add("Tomato Omelet Recipe");
+//        mImgUrl.add("");
+//
+//        initRecyclerView();
+//    }
 
     public void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.recycler_view);

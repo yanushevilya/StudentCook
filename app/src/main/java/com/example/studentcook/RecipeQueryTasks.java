@@ -19,9 +19,12 @@ import static com.example.studentcook.NetworkUtils.getResponseFromUrl;
 class RecipeQueryTasks extends AsyncTask<URL, Void, String> {
 
     private final MainActivity mainActivity;
+    private final CheckboxRecipes checkboxRecipes;
 
-    public RecipeQueryTasks(MainActivity mainActivity) {
+
+    public RecipeQueryTasks(MainActivity mainActivity, CheckboxRecipes checkboxRecipes) {
         this.mainActivity = mainActivity;
+        this.checkboxRecipes = checkboxRecipes;
     }
 
     @Override

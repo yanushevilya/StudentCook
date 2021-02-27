@@ -37,6 +37,37 @@ public class NetworkUtils {
         return url;
     }
 
+    // возвращаем URL (for CheckBox)
+    public static URL generateURLCb (String ... component) {
+        // используем Uri для построения html-строки запроса
+        // Uri позволяет нам строить строку запроса, при это
+        // подстановку управляющих симовлов типа =,?,& он берет на себя
+        // http://www.recipepuppy.com/api/?i=  onions,garlic  &q=  omelet  &p=3
+        String components = "";
+        for (int i=0; i<component.length; i++) {
+            if (i == component.length - 1) {
+                components = components + component[i];
+            } else {
+                components = components + component[i] + ",";
+            }
+        }
+
+        Uri buildUri = Uri.parse(RECIPE_BASE_URL).buildUpon()
+                .appendQueryParameter(RECIPE_OPTIONS_URL, components)
+                .appendQueryParameter(RECIPE_NAME_URL, "")
+                .appendQueryParameter(RECIPE_END_URL, "1")
+                .build();
+
+        // конвертируем Uri в URL
+        URL url = null;
+        try {
+            url = new URL(Uri.decode(buildUri.toString()));
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        return url;
+    }
+
     // возвращаем JSON-объект из нашего URL
     public static String getResponseFromUrl(URL url) throws IOException {
         // создаем подключение по URL - url.openConnection()
